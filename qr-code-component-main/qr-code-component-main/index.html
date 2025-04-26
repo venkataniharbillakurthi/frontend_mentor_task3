@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | QR code component</title>
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+
+  <div style="height: 100vh; display: flex; align-items: center; justify-content: center; background-color: antiquewhite;">
+    <div style="width: 300px; height: auto; padding: 20px; border: 1px solid; background-color: white; border-radius: 10px; text-align: center;">
+      
+      <!-- QR Code Sub Div -->
+      <div style="margin-bottom: 15px;">
+        <img id="qrImage" src="" alt="QR Code" style="width: 200px; height: 200px; border-radius: 10px;">
+      </div>
+      
+      <!-- Paragraph Text -->
+      <p style="font-size: 14px; color: #333;">
+        Improve your front-end skills by building projects.<br><br>
+        Scan the QR code to visit Frontend Mentor and take your coding skills to the next level!
+      </p>
+
+    </div>
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script>
+    const link = "https://www.frontendmentor.io"; // Your link
+    const qrImage = document.getElementById("qrImage");
+    qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(link)}&size=200x200`;
+  </script>
+
+</body>
+</html>
